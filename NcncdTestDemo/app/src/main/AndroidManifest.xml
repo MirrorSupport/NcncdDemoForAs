@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="cn.miao.ncncdtestdemo">
+
+    <!-- 网络 -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <!--上传健康界面-->
+        <activity
+            android:name=".HealthActivity"
+            android:screenOrientation="portrait"/>
+
+        <!--上传血糖界面-->
+        <activity
+            android:name=".BloodSugarActivity"
+            android:screenOrientation="portrait"/>
+
+        <!--上传血压界面-->
+        <activity
+            android:name=".BloodPressureActivity"
+            android:screenOrientation="portrait"/>
+
+        <!--上传血氧界面-->
+        <activity
+            android:name=".BloodOxygenActivity"
+            android:screenOrientation="portrait"/>
+
+        <!--上传运动界面-->
+        <activity
+            android:name=".SportActivity"
+            android:screenOrientation="portrait"/>
+
+        <!--上传睡眠界面-->
+        <activity
+            android:name=".SleepActivity"
+            android:screenOrientation="portrait"/>
+
+        <!--上传心率界面-->
+        <activity
+            android:name=".HeartRateActivity"
+            android:screenOrientation="portrait"/>
+
+        <!--上传体温界面-->
+        <activity
+            android:name=".TemperatureActivity"
+            android:screenOrientation="portrait"/>
+
+        <!--设置appKey、appSecret-->
+        <meta-data
+            android:name="NCNCD_APPKEY"
+            android:value="a808e7a5debb16b1587c6c357db44f85"
+            />
+        <meta-data
+            android:name="NCNCD_APPSECRET"
+            android:value="8a73ce716e13c9b1b4af42b5f486c557"
+            />
+    </application>
+
+</manifest>

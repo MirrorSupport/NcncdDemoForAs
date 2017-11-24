@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="cn.miao.ncncd:ncncd-1.0.2">
+    <CLASSES>
+      <root url="file:///software/gradle/caches/transforms-1/files-1.1/ncncd-1.0.2.aar/5cae8d20f315e0b40d32b06d8e4e996b/res" />
+      <root url="jar:///software/gradle/caches/transforms-1/files-1.1/ncncd-1.0.2.aar/5cae8d20f315e0b40d32b06d8e4e996b/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar:///software/gradle/caches/modules-2/files-2.1/cn.miao.ncncd/ncncd/1.0.2/cae746cbc32096353e25a116a0e6986a9535ebd2/ncncd-1.0.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
