@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
     private TestAdapter testAdapter;
 
     /*列表数据*/
-    private String[] datas = {"上传血糖数据", "上传健康数据", "上传血压数据", "上传运动数据", "上传睡眠数据", "上传血氧数据", "上传心率数据", "上传体温数据", "上传用户数据", "上传视力数据", "上传胆固醇数据", "上传内分泌数据", "上传心脑血管数据", "上传消化系统数据", "上传胡呼吸系统数据", "上传骨骼系统数据", "上传免疫数据", "上传男性生殖系统数据", "上传女性生殖系统数据", "上传营养状态数据", "上传有害物质数据", "上传皮肤系统数据"};
+    private String[] datas = {"上传血糖数据", "上传健康数据", "上传血压数据", "上传运动数据", "上传睡眠数据", "上传血氧数据", "上传心率数据", "上传体温数据", "上传用户数据", "上传视力数据", "上传胆固醇数据", "上传内分泌数据", "上传心脑血管数据", "上传消化系统数据", "上传呼吸系统数据", "上传骨骼系统数据", "上传免疫系统数据", "上传男性生殖系统数据", "上传女性生殖系统数据", "上传营养状态数据", "上传有害物质数据", "上传皮肤系统数据"};
     private Class[] activitys = new Class[]{BloodSugarActivity.class, HealthActivity.class, BloodPressureActivity.class, SportActivity.class, SleepActivity.class, BloodOxygenActivity.class, HeartRateActivity.class, TemperatureActivity.class, NcncdRegisterActivity.class};
 
     private List<Eyesight> eyesights;
