@@ -73,11 +73,11 @@
         <!--设置appKey、appSecret-->
         <meta-data
             android:name="NCNCD_APPKEY"
-            android:value="a808e7a5debb16b1587c6c357db44f85"
+            android:value="a1"
             />
         <meta-data
             android:name="NCNCD_APPSECRET"
-            android:value="8a73ce716e13c9b1b4af42b5f486c557"
+            android:value="a1"
             />
     </application>
 
