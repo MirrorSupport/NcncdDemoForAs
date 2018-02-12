@@ -24,6 +24,7 @@ import cn.miao.ncncd.api.NutritionalApi;
 import cn.miao.ncncd.api.RespiratoryApi;
 import cn.miao.ncncd.api.SkeletalApi;
 import cn.miao.ncncd.api.SkinApi;
+import cn.miao.ncncd.api.UserApi;
 import cn.miao.ncncd.api.handle.ApiHandle;
 import cn.miao.ncncd.configure.Configure;
 import cn.miao.ncncd.http.entity.Cardiovascular;
@@ -39,6 +40,7 @@ import cn.miao.ncncd.http.entity.Nutritional;
 import cn.miao.ncncd.http.entity.Respiratory;
 import cn.miao.ncncd.http.entity.Skeletal;
 import cn.miao.ncncd.http.entity.Skin;
+import cn.miao.ncncd.http.entity.User;
 import cn.miao.ncncd.util.ToastUtil;
 import cn.miao.ncncd.vm.NcncdRegisterActivity;
 import cn.miao.ncncdtestdemo.adapter.TestAdapter;
@@ -53,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
     private TestAdapter testAdapter;
 
     /*列表数据*/
-    private String[] datas = {"上传血糖数据", "上传健康数据", "上传血压数据", "上传运动数据", "上传睡眠数据", "上传血氧数据", "上传心率数据", "上传体温数据", "上传用户数据", "上传视力数据", "上传胆固醇数据", "上传内分泌数据", "上传心脑血管数据", "上传消化系统数据", "上传呼吸系统数据", "上传骨骼系统数据", "上传免疫系统数据", "上传男性生殖系统数据", "上传女性生殖系统数据", "上传营养状态数据", "上传有害物质数据", "上传皮肤系统数据"};
+    private String[] datas = {"上传血糖数据", "上传健康数据", "上传血压数据", "上传运动数据", "上传睡眠数据", "上传血氧数据", "上传心率数据", "上传体温数据", "上传用户数据界面", "上传视力数据", "上传胆固醇数据", "上传内分泌数据", "上传心脑血管数据", "上传消化系统数据", "上传呼吸系统数据", "上传骨骼系统数据", "上传免疫系统数据", "上传男性生殖系统数据", "上传女性生殖系统数据", "上传营养状态数据", "上传有害物质数据", "上传皮肤系统数据", "上传用户数据"};
     private Class[] activitys = new Class[]{BloodSugarActivity.class, HealthActivity.class, BloodPressureActivity.class, SportActivity.class, SleepActivity.class, BloodOxygenActivity.class, HeartRateActivity.class, TemperatureActivity.class, NcncdRegisterActivity.class};
 
     private List<Eyesight> eyesights;
@@ -69,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
     private List<Nutritional> nutritionals;
     private List<HarmfulSubstances> harmfulSubstances;
     private List<Skin> skins;
+    private User user;
 
     private Random random;
 
@@ -104,6 +107,7 @@ public class MainActivity extends AppCompatActivity {
         nutritionals = new ArrayList<Nutritional>();
         harmfulSubstances = new ArrayList<HarmfulSubstances>();
         skins = new ArrayList<Skin>();
+        user = new User();
     }
 
     public void initView() {
@@ -294,6 +298,11 @@ public class MainActivity extends AppCompatActivity {
 
         }
 
+        user.setWeight(random.nextInt(50));
+        user.setHeight(random.nextInt(50));
+        user.setSex(1);
+        user.setBirthday("1990_12_26");
+
         testAdapter = new TestAdapter(this, datas);
         lvTest.setAdapter(testAdapter);
     }
@@ -304,7 +313,35 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                if (position < 9) {
+                if (position <= 8) {
+
+                    /*上传用户界面，设置回调*/
+                    if (position == 8) {
+                        UserApi.setApiCallBack(new ApiHandle() {
+                            @Override
+                            public void onStart() {
+
+                            }
+
+                            @Override
+                            public void onSuccess() {
+                                ToastUtil.show(MainActivity.this, "数据上传成功");
+
+                            }
+
+                            @Override
+                            public void onFailure(int errNo, String errMsg) {
+                                ToastUtil.show(MainActivity.this, errMsg);
+
+                            }
+
+                            @Override
+                            public void onFinish() {
+
+                            }
+                        });
+                    }
+
                     Intent intent = new Intent(MainActivity.this, activitys[position]);
                     startActivity(intent);
 
@@ -542,6 +579,25 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case 21://皮肤系统
                         SkinApi.uploadSkin(MainActivity.this, "18811427233", skins, new ApiHandle() {
+
+                            @Override
+                            public void onSuccess() {
+                                super.onSuccess();
+                                ToastUtil.show(MainActivity.this, "数据上传成功");
+
+                            }
+
+                            @Override
+                            public void onFailure(int errNo, String errMsg) {
+                                super.onFailure(errNo, errMsg);
+
+                                ToastUtil.show(MainActivity.this, errMsg);
+
+                            }
+                        });
+                        break;
+                    case 22://用户
+                        UserApi.uploadUser(MainActivity.this, "18811427233", user, new ApiHandle() {
 
                             @Override
                             public void onSuccess() {
