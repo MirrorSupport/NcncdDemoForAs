@@ -15,8 +15,9 @@ import java.util.List;
 
 import cn.miao.ncncd.api.SleepApi;
 import cn.miao.ncncd.api.handle.ApiHandle;
+import cn.miao.ncncd.configure.Configure;
 import cn.miao.ncncd.http.entity.Sleep;
-import cn.miao.ncncd.util.ToastUtil;
+import cn.miao.ncncdtestdemo.util.ToastUtil;
 
 /**
  * 上传睡眠数据界面
@@ -228,6 +229,7 @@ public class SleepActivity extends AppCompatActivity {
         sleep.setLightDuration(Integer.parseInt(lightDuration));
         sleep.setBeginTime(beginTime);
         sleep.setEndTime((int) (System.currentTimeMillis() / 1000));
+        sleep.setDeviceNo(Configure.deviceNo);
         sleeps.add(sleep);
 
         showContent(sleep);

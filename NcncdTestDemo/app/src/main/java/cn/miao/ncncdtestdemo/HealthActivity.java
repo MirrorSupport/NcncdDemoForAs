@@ -15,8 +15,9 @@ import java.util.List;
 
 import cn.miao.ncncd.api.HealthApi;
 import cn.miao.ncncd.api.handle.ApiHandle;
+import cn.miao.ncncd.configure.Configure;
 import cn.miao.ncncd.http.entity.Health;
-import cn.miao.ncncd.util.ToastUtil;
+import cn.miao.ncncdtestdemo.util.ToastUtil;
 
 /**
  * 上传健康数据界面
@@ -237,6 +238,8 @@ public class HealthActivity extends AppCompatActivity {
         health.setMoistureRate(Float.parseFloat(moistureRate));
         health.setMuscleRate(Float.parseFloat(MuscleRate));
         health.setSampleTime((int) (System.currentTimeMillis() / 1000));
+        health.setDeviceNo(Configure.deviceNo);
+        health.setWeight(50);
         healths.add(health);
 
         showContent(health);

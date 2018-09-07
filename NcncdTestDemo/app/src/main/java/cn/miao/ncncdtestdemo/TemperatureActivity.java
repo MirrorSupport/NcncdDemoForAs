@@ -15,8 +15,9 @@ import java.util.List;
 
 import cn.miao.ncncd.api.TemperatureApi;
 import cn.miao.ncncd.api.handle.ApiHandle;
+import cn.miao.ncncd.configure.Configure;
 import cn.miao.ncncd.http.entity.Temperature;
-import cn.miao.ncncd.util.ToastUtil;
+import cn.miao.ncncdtestdemo.util.ToastUtil;
 
 /**
  * 上传体温数据界面
@@ -216,6 +217,7 @@ public class TemperatureActivity extends AppCompatActivity {
         temperature.setMin(Float.parseFloat(min));
         temperature.setBeginTime(beginTime);
         temperature.setEndTime((int) (System.currentTimeMillis() / 1000));
+        temperature.setDeviceNo(Configure.deviceNo);
         temperatures.add(temperature);
 
         showContent(temperature);

@@ -15,8 +15,9 @@ import java.util.List;
 
 import cn.miao.ncncd.api.HeartRateApi;
 import cn.miao.ncncd.api.handle.ApiHandle;
+import cn.miao.ncncd.configure.Configure;
 import cn.miao.ncncd.http.entity.HeartRate;
-import cn.miao.ncncd.util.ToastUtil;
+import cn.miao.ncncdtestdemo.util.ToastUtil;
 
 /**
  * 上传心率数据界面
@@ -219,6 +220,7 @@ public class HeartRateActivity extends AppCompatActivity {
         heartRate.setMin(Float.parseFloat(min));
         heartRate.setBeginTime(beginTime);
         heartRate.setEndTime((int) (System.currentTimeMillis() / 1000));
+        heartRate.setDeviceNo(Configure.deviceNo);
         heartRates.add(heartRate);
 
         showContent(heartRate);

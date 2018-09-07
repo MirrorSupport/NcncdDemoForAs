@@ -15,8 +15,9 @@ import java.util.List;
 
 import cn.miao.ncncd.api.BloodOxygenApi;
 import cn.miao.ncncd.api.handle.ApiHandle;
+import cn.miao.ncncd.configure.Configure;
 import cn.miao.ncncd.http.entity.BloodOxygen;
-import cn.miao.ncncd.util.ToastUtil;
+import cn.miao.ncncdtestdemo.util.ToastUtil;
 
 
 /**
@@ -219,6 +220,7 @@ public class BloodOxygenActivity extends AppCompatActivity {
         bloodOxygen.setMin(Float.parseFloat(min));
         bloodOxygen.setBeginTime(beginTime);
         bloodOxygen.setEndTime((int) (System.currentTimeMillis() / 1000));
+        bloodOxygen.setDeviceNo(Configure.deviceNo);
         bloodOxygens.add(bloodOxygen);
 
         showContent(bloodOxygen);

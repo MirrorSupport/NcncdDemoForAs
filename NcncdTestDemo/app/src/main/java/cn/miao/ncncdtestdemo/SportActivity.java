@@ -15,8 +15,9 @@ import java.util.List;
 
 import cn.miao.ncncd.api.SportApi;
 import cn.miao.ncncd.api.handle.ApiHandle;
+import cn.miao.ncncd.configure.Configure;
 import cn.miao.ncncd.http.entity.Sport;
-import cn.miao.ncncd.util.ToastUtil;
+import cn.miao.ncncdtestdemo.util.ToastUtil;
 
 /**
  * 上传运动数据界面
@@ -208,6 +209,7 @@ public class SportActivity extends AppCompatActivity {
         sport.setDistance(Integer.parseInt(distance));
         sport.setBeginTime(beginTime);
         sport.setEndTime((int) (System.currentTimeMillis() / 1000));
+        sport.setDeviceNo(Configure.deviceNo);
         sports.add(sport);
 
         showContent(sport);

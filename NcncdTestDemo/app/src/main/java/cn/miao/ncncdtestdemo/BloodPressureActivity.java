@@ -15,8 +15,9 @@ import java.util.List;
 
 import cn.miao.ncncd.api.BloodPressureApi;
 import cn.miao.ncncd.api.handle.ApiHandle;
+import cn.miao.ncncd.configure.Configure;
 import cn.miao.ncncd.http.entity.BloodPressure;
-import cn.miao.ncncd.util.ToastUtil;
+import cn.miao.ncncdtestdemo.util.ToastUtil;
 
 /**
  * 上传血压数据界面
@@ -194,6 +195,7 @@ public class BloodPressureActivity extends AppCompatActivity {
         bloodPressure.setDiastolic(Integer.parseInt(diastolic));
         bloodPressure.setSystolic(Integer.parseInt(systolic));
         bloodPressure.setSampleTime((int) (System.currentTimeMillis() / 1000));
+        bloodPressure.setDeviceNo(Configure.deviceNo);
         pressures.add(bloodPressure);
 
         showContent(bloodPressure);

@@ -15,8 +15,9 @@ import java.util.List;
 
 import cn.miao.ncncd.api.BloodSugarApi;
 import cn.miao.ncncd.api.handle.ApiHandle;
+import cn.miao.ncncd.configure.Configure;
 import cn.miao.ncncd.http.entity.BloodSugar;
-import cn.miao.ncncd.util.ToastUtil;
+import cn.miao.ncncdtestdemo.util.ToastUtil;
 
 /**
  * 上传血糖数据界面
@@ -196,6 +197,7 @@ public class BloodSugarActivity extends AppCompatActivity {
         bloodSugar.setType(Integer.parseInt(type));
         bloodSugar.setValue(Float.parseFloat(value));
         bloodSugar.setSampleTime((int) (System.currentTimeMillis() / 1000));
+        bloodSugar.setDeviceNo(Configure.deviceNo);
         bloodSugars.add(bloodSugar);
 
         showContent(bloodSugar);

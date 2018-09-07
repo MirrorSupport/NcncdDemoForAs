@@ -41,9 +41,9 @@ import cn.miao.ncncd.http.entity.Respiratory;
 import cn.miao.ncncd.http.entity.Skeletal;
 import cn.miao.ncncd.http.entity.Skin;
 import cn.miao.ncncd.http.entity.User;
-import cn.miao.ncncd.util.ToastUtil;
 import cn.miao.ncncd.vm.NcncdRegisterActivity;
 import cn.miao.ncncdtestdemo.adapter.TestAdapter;
+import cn.miao.ncncdtestdemo.util.ToastUtil;
 
 /**
  * 主界面
@@ -91,6 +91,7 @@ public class MainActivity extends AppCompatActivity {
     public void initBoot() {
 
         Configure.init(this);
+//        Configure.init(this, "DeviceNo");
 
         random = new Random();
 
@@ -126,6 +127,7 @@ public class MainActivity extends AppCompatActivity {
             eyesight.setLeftEye(random.nextInt(50));
             eyesight.setRightEye(random.nextInt(50));
             eyesight.setSampleTime(1516788245);
+            eyesight.setDeviceNo(Configure.deviceNo);
             eyesights.add(eyesight);
 
         }
@@ -138,6 +140,7 @@ public class MainActivity extends AppCompatActivity {
             cholesterol.setTriglycerides(random.nextInt(50));
             cholesterol.setUric(random.nextInt(50));
             cholesterol.setSampleTime(1516788245);
+            cholesterol.setDeviceNo(Configure.deviceNo);
             cholesterols.add(cholesterol);
 
         }
@@ -149,6 +152,7 @@ public class MainActivity extends AppCompatActivity {
             endocrine.setPineal(random.nextInt(50));
             endocrine.setThyroxine(random.nextInt(50));
             endocrine.setSampleTime(1516788245);
+            endocrine.setDeviceNo(Configure.deviceNo);
             endocrines.add(endocrine);
 
         }
@@ -168,6 +172,7 @@ public class MainActivity extends AppCompatActivity {
             cardiovascular.setVascularElasticity(random.nextInt(50));
             cardiovascular.setVascularResistance(random.nextInt(50));
             cardiovascular.setSampleTime(1516788245);
+            cardiovascular.setDeviceNo(Configure.deviceNo);
             cardiovasculars.add(cardiovascular);
 
         }
@@ -183,6 +188,7 @@ public class MainActivity extends AppCompatActivity {
             digestive.setSmallIntestineAbsorption(random.nextInt(50));
             digestive.setSmallIntestinePeristalsis(random.nextInt(50));
             digestive.setSampleTime(1516788245);
+            digestive.setDeviceNo(Configure.deviceNo);
             digestives.add(digestive);
 
         }
@@ -192,6 +198,7 @@ public class MainActivity extends AppCompatActivity {
             respiratory.setAirwayResistance(random.nextInt(50));
             respiratory.setCapacity(random.nextInt(50));
             respiratory.setSampleTime(1516788245);
+            respiratory.setDeviceNo(Configure.deviceNo);
             respiratories.add(respiratory);
 
         }
@@ -210,6 +217,7 @@ public class MainActivity extends AppCompatActivity {
             skeletal.setUltrasonicSpeed(random.nextInt(50));
             skeletal.setRheumatismCoefficient(random.nextInt(50));
             skeletal.setSampleTime(1516788245);
+            skeletal.setDeviceNo(Configure.deviceNo);
             skeletals.add(skeletal);
 
         }
@@ -223,6 +231,7 @@ public class MainActivity extends AppCompatActivity {
             immune.setSpleenIndex(random.nextInt(50));
             immune.setTonsilImmuneIndex(random.nextInt(50));
             immune.setSampleTime(1516788245);
+            immune.setDeviceNo(Configure.deviceNo);
             immunes.add(immune);
 
         }
@@ -236,6 +245,7 @@ public class MainActivity extends AppCompatActivity {
             maleReproductive.setProstatitisCalcification(random.nextInt(50));
             maleReproductive.setTestosterone(random.nextInt(50));
             maleReproductive.setSampleTime(1516788245);
+            maleReproductive.setDeviceNo(Configure.deviceNo);
             maleReproductives.add(maleReproductive);
 
         }
@@ -246,6 +256,7 @@ public class MainActivity extends AppCompatActivity {
             femaleReproductive.setEndocrineImbalanceCoefficient(random.nextInt(50));
             femaleReproductive.setVaginitisCoefficient(random.nextInt(50));
             femaleReproductive.setSampleTime(1516788245);
+            femaleReproductive.setDeviceNo(Configure.deviceNo);
             femaleReproductives.add(femaleReproductive);
 
         }
@@ -270,6 +281,7 @@ public class MainActivity extends AppCompatActivity {
             nutritional.setVitaminK(random.nextInt(50));
             nutritional.setZinc(random.nextInt(50));
             nutritional.setSampleTime(1516788245);
+            nutritional.setDeviceNo(Configure.deviceNo);
             nutritionals.add(nutritional);
 
         }
@@ -283,6 +295,7 @@ public class MainActivity extends AppCompatActivity {
             harmfulSubstances1.setPb(random.nextInt(50));
             harmfulSubstances1.setPesticideResidues(random.nextInt(50));
             harmfulSubstances1.setSampleTime(1516788245);
+            harmfulSubstances1.setDeviceNo(Configure.deviceNo);
             harmfulSubstances.add(harmfulSubstances1);
 
         }
@@ -294,6 +307,7 @@ public class MainActivity extends AppCompatActivity {
             skin.setMoistureIndex(random.nextInt(50));
             skin.setOilIndex(random.nextInt(50));
             skin.setSampleTime(1516788245);
+            skin.setDeviceNo(Configure.deviceNo);
             skins.add(skin);
 
         }
@@ -302,6 +316,7 @@ public class MainActivity extends AppCompatActivity {
         user.setHeight(random.nextInt(50));
         user.setSex(1);
         user.setBirthday("1990_12_26");
+        user.setDeviceNo(Configure.deviceNo);
 
         testAdapter = new TestAdapter(this, datas);
         lvTest.setAdapter(testAdapter);
